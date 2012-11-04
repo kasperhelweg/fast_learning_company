@@ -8,7 +8,7 @@ describe "Static pages" do
   describe "Homepage" do
     before { visit root_path }
   
-    it { should have_selector( 'title', text: "Fastlearning Company | Forside" ) }
+    it { should have_selector( 'title', text: "Fastlearning Company" ) }
     it { should have_selector( 'h1', text: "Forside" ) }
   end
 
