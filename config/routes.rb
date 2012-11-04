@@ -1,4 +1,17 @@
 FastLearningCompany::Application.routes.draw do
+  
+  root                            to: 'static_pages#home'
+
+  # Static pages
+  match '/home',                  to: 'static_pages#home'  
+  match '/about',                 to: 'static_pages#about' 
+  match '/calendar',              to: 'static_pages#calendar' 
+  match '/terms',                 to: 'static_pages#terms' 
+  match '/contact',               to: 'static_pages#contact' 
+
+  # Errors routing
+  match '*a', :to => 'errors#routing'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
