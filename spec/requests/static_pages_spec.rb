@@ -11,6 +11,13 @@ describe "Static pages" do
     it { should have_selector( 'title', text: "Fastlearning Company" ) }
     it { should have_selector( 'h1', text: "Forside" ) }
   end
+  
+  describe "Courses" do
+    before { visit courses_path }
+  
+    it { should have_selector( 'title', text: "Fastlearning Company | Kurser" ) }
+    it { should have_selector( 'h1', text: "Kurser" ) }
+  end
 
   describe "Calendar" do
     before { visit calendar_path }

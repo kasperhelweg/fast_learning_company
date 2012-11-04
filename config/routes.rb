@@ -1,5 +1,7 @@
 FastLearningCompany::Application.routes.draw do
   
+  get "courses/new"
+
   root                            to: 'static_pages#home'
 
   # Static pages
@@ -9,6 +11,8 @@ FastLearningCompany::Application.routes.draw do
   match '/terms',                 to: 'static_pages#terms' 
   match '/contact',               to: 'static_pages#contact' 
 
+  # Courses
+  resources :courses
   # Errors routing
   match '*a', :to => 'errors#routing'
 

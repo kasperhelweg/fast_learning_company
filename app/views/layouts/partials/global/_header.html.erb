@@ -1,0 +1,16 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "sample app", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+	  <li><%= link_to "Forside",            root_path %></li>
+          <li><%= link_to "Kalender",           calendar_path %></li>
+          <li><%= link_to "Kurser",             courses_path %></li>
+	  <li class="divider-vertical"></li>
+	  <li><%= link_to "Log på",             '#' %></li>
+	</ul>
+      </nav>
+    </div>
+  </div>
+</header>
