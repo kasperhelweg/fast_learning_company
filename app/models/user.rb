@@ -80,6 +80,8 @@ class User < ActiveRecord::Base
   def construct_name( name )
     if name.length == 0
       return ""
+    elsif name.length == 1
+      return name.shift.capitalize
     else
       name.shift.capitalize + " " + construct_name( name )
     end

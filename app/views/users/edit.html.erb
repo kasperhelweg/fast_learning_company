@@ -1,0 +1,11 @@
+<% provide(:title, 'Rediger profil') %>
+<%= render 'shared/error_messages' %>    
+<%= form_for(@user, :html => { :class => "new_user"}) do |f| %>
+  <%= render :partial => 'shared/basic_user_info', :locals => { :f => f } %>
+  
+  
+  <div><%= f.submit "Gem ændringer", class: 'btn' %></div>
+<% end %>
+
+
+
