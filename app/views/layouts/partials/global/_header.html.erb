@@ -1,16 +1,45 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "fastlearning company", root_path, id: "logo" %>
+      <a class="brand push-left" href="<%= root_path %>">	
+	<%= image_tag("sendgrid-logo.png", :size => "112x30", alt: "Fastlearning") %>     
+      </a>
       <nav>
-        <ul class="nav pull-right">
-	  <li><%= link_to "Forside",            root_path %></li>
-          <li><%= link_to "Kalender",           calendar_path %></li>
-          <li><%= link_to "Kurser",             courses_path %></li>
+
+        <ul class="nav pull-right">	
+          <li><%= link_to "Forside",  root_path %></li>
+          <li><%= link_to "Kalender", calendar_path %></li>
+          <li><%= link_to "Kurser",   courses_path %></li>
 	  <li class="divider-vertical"></li>
-	  <li><%= link_to "Log på",             '#' %></li>
-	</ul>
+	  <% if user_signed_in? %>
+	  <li id="fat-menu" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	      <%= current_user.name %> <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+	      <li><%= link_to "Profil", current_user %></li>
+		<li><%= link_to "Indstillinger", edit_user_path( current_user )  %></li>
+		<% if current_user.role? :company %>
+	          <li class="divider"></li>
+	          <li>
+		    <%= link_to "Konto",  signout_path, :method => :delete %>
+	          </li>
+		<% end %>
+              <li class="divider"></li>
+	      <li>
+		<%= link_to "Log af",  signout_path, :method => :delete %>
+	      </li>
+            </ul>
+          </li>
+	  <% else %>
+	    <li><%= link_to "Log på",  signin_path %></li>
+	    <% end %>
+
+        </ul>
+
       </nav>
+
     </div>
   </div>
 </header>
+

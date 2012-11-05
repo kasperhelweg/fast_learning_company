@@ -1,0 +1,24 @@
+<% provide(:title, "Log på") %>
+<div class="row">  
+  <div class="span6 offset3 login">
+    <div class="offset1 login_content">
+      <h1>LOG PÅ</h1>
+       
+      <%= form_for(:session, url: sessions_path, :html => { :class => "new_user"}) do |f| %>
+      
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+        
+	<label class="checkbox" >
+	  <%= check_box_tag :remember_me, 1, params[:remember_me] %> Forbliv logget på?
+	</label>
+
+      <p><%= link_to "Har du glemt dit password?", new_password_path %></p>    
+      <div><%= f.submit "Log på", class: 'btn' %></div>
+      <% end %>
+    </div>
+  </div>  
+</div>

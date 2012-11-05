@@ -9,8 +9,26 @@ FastLearningCompany::Application.routes.draw do
   match '/terms',                 to: 'static_pages#terms' 
   match '/contact',               to: 'static_pages#contact' 
 
+  # Users
+
+  resources :users
+  # Companies
+  resources :companies
+
+  # Learners
+  resources :learners
   # Courses
-  resources :courses
+  resources :courses  
+  
+  # Sign in / up and stuff / sessions
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/profile', to: 'users#show'
+    
+  # For resetting passwords
+  resources :passwords
   
   # Errors routing
   match '*a', :to => 'errors#routing'

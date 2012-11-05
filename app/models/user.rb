@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_secure_password  
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
+  
   attr_accessible :name, :email, :password, :password_confirmation 
   before_create   :create_id_hash
   before_save     :downcase_email
@@ -46,6 +46,14 @@ class User < ActiveRecord::Base
     self.save!
   end
 
+  def self.inherited(child)
+    child.instance_eval do
+      def model_name
+        User.model_name
+      end
+    end
+    super
+  end
   ##############################################################
   # Private interface
   ##############################################################
@@ -58,7 +66,7 @@ class User < ActiveRecord::Base
   end
   
   def create_id_hash
-    self.id_hash = Digest::SHA2.hexdigest( self.email )[0..5]
+    self.id_hash = Digest::SHA2.hexdigest( self.email )[0..6]
   end
   
   def downcase_email
