@@ -26,6 +26,12 @@ user_emp_1 = user_comp_1.learners.build(
                 password: "123456", 
                 password_confirmation: "123456" )
 
+user_emp_2 = user_comp_1.learners.build(
+                name: "Kasper Helweg",
+                email: "kasperhelweg@gmail.com", 
+                password: "kiss2211", 
+                password_confirmation: "kiss2211" )
+
 user_comp_1.save
 user_comp_2.save
 

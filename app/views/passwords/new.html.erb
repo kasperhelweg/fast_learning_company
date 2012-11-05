@@ -1,0 +1,17 @@
+<% provide(:title, "Glemt password") %>
+
+<div class="row">  
+  <div class="span6 offset3 login">
+    <div class="offset1 login_content">
+      <p><h3>Nulstil password</h3></p>
+
+      <%= form_tag passwords_path, :method => :post do %>
+      
+      <%= label_tag :email %>
+      <%= text_field_tag :email, params[:email] %>
+      
+      <div><%= submit_tag "Nulstil password", class: 'btn' %></div>
+      <% end %>
+    </div>
+  </div>
+</div>

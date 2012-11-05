@@ -1,6 +1,21 @@
 FastLearningCompany::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  
+  config.action_mailer.default_url_options = { :host => 'aqueous-garden-3159.herokuapp.com' }
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'heroku.com'
+  }
+  ActionMailer::Base.delivery_method = :smtp
 
+  # Force all access to the app over SSL, use Strict-Transport-Security, 
+  # and use secure cookies.
+  config.force_ssl = true
+ 
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -15,7 +30,7 @@ FastLearningCompany::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true

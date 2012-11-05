@@ -1,0 +1,24 @@
+<% provide(:title, 'Rediger password') %>
+
+<div class="row">  
+  <div class="span6 offset3 login">
+    <div class="offset1 login_content">
+      <p><h3>Vælg nyt password</h3></p>
+
+      <%= form_for @user, :url => password_path( params[:id] ) do |f| %>
+      
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+
+      <div><%= f.submit "Gem ændringer", class: 'btn' %></div>
+      
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
