@@ -19,9 +19,8 @@ FastLearningCompany::Application.routes.draw do
  # resources :learners
   # Courses
   resources :courses  
-  resources :classrooms do
-    resources :pages, except: [:show]
-    match ':id(.:format)',  to: 'pages#show', as: :page, via: :get
+  resources :classrooms, except: [:show] do
+    match ':id(.:format)',  to: 'classrooms#show', as: :page, via: :get
   end
   
   # Sign in / up and stuff / sessions
@@ -34,6 +33,8 @@ FastLearningCompany::Application.routes.draw do
   # For resetting passwords
   resources :passwords
 
+  # Admin for pages
+  resources :pages
 
   
   # Errors routing

@@ -5,7 +5,7 @@
 <ul class="classrooms">
   <% current_user.classrooms.each do |classroom| %>
   <li>
-    <%= link_to classroom.course.title, classroom %> 
+    <%= link_to classroom.course.title, [classroom, classroom.pages.where("title = 'Forside'").first] %> 
   </li>
   
  
