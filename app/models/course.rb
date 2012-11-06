@@ -1,4 +1,6 @@
 class Course < ActiveRecord::Base
+  has_many :classrooms
+
   before_create :create_id_hash
 
   attr_accessible :desc, :short_desc, :title

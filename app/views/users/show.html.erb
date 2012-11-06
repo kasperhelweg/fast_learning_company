@@ -1,2 +1,15 @@
 <% provide(:title, current_user.name) %>
 <%= current_user.name %>
+
+<% if current_user.role? :learner %>
+<ul class="classrooms">
+  <% current_user.classrooms.each do |classroom| %>
+  <li>
+    <%= link_to classroom.course.title, classroom %> 
+  </li>
+  
+ 
+  <% end %>
+</ul>
+
+<% end %> 

@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105150812) do
+ActiveRecord::Schema.define(:version => 20121105214410) do
+
+  create_table "classrooms", :force => true do |t|
+    t.string   "id_hash"
+    t.date     "starts"
+    t.date     "ends"
+    t.date     "online_date", :null => false
+    t.integer  "course_id",   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "classrooms", ["id_hash"], :name => "index_classrooms_on_id_hash", :unique => true
 
   create_table "courses", :force => true do |t|
     t.string   "id_hash",    :null => false
@@ -23,6 +35,14 @@ ActiveRecord::Schema.define(:version => 20121105150812) do
   end
 
   add_index "courses", ["id_hash"], :name => "index_courses_on_id_hash", :unique => true
+
+  create_table "enrollments", :force => true do |t|
+    t.integer  "classroom_id", :null => false
+    t.integer  "learner_id",   :null => false
+    t.string   "status",       :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "type",                                   :null => false

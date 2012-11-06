@@ -13,12 +13,13 @@ FastLearningCompany::Application.routes.draw do
 
   resources :users
   # Companies
-  resources :companies
+  #resources :companies
 
   # Learners
-  resources :learners
+ # resources :learners
   # Courses
   resources :courses  
+  resources :classrooms
   
   # Sign in / up and stuff / sessions
   resources :sessions, only: [:new, :create, :destroy]

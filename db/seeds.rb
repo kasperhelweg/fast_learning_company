@@ -32,11 +32,11 @@ user_emp_2 = user_comp_1.learners.build(
                 password: "kiss2211", 
                 password_confirmation: "kiss2211" )
 
-user_comp_1.save
-user_comp_2.save
+user_comp_1.save!
+user_comp_2.save!
 
 # Seed courses
-course_MUS = Course.create(
+course_MUS = Course.new(
                 title: "MUS samtaler",
                 short_desc: "Velkommen til MUS",
                 desc: "Dette kursus henvender sig..." )
@@ -77,3 +77,19 @@ course_GRUND = Course.create(
                 title: "Grundlæggende ledelse",
                 short_desc: "Velkommen til Grundlæggende ledelse",
                 desc: "Dette kursus henvender sig..." )
+
+# Seed classrooms
+mus_classroom_1 = course_MUS.classrooms.build(
+                online_date: Date.today )
+                
+mus_classroom_2 = course_MUS.classrooms.build(
+                online_date: Date.tomorrow )
+
+
+course_MUS.save!
+
+
+test_Enrollment_02 = Enrollment.create(
+                      learner_id: 3,
+                      classroom_id: 1,
+                      status: "enrolled" )
