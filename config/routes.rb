@@ -10,13 +10,14 @@ FastLearningCompany::Application.routes.draw do
   match '/contact',               to: 'static_pages#contact' 
 
   # Users
-
   resources :users, :path_names => { :edit => 'account' } 
+  
   # Companies
   #resources :companies
 
   # Learners
- # resources :learners
+  # resources :learners
+  
   # Courses
   resources :courses  
   resources :classrooms, except: [:show] do
@@ -25,17 +26,16 @@ FastLearningCompany::Application.routes.draw do
   
   # Sign in / up and stuff / sessions
   resources :sessions, only: [:new, :create, :destroy]
-
+  
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/profile', to: 'users#show'
-    
+  
   # For resetting passwords
   resources :passwords
-
+  
   # Admin for pages
   resources :pages
-
   
   # Errors routing
   match '*a', :to => 'errors#routing'
