@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'bootstrap-sass', '~> 2.0.4.0'
+gem 'bootstrap-sass', '2.0.4.0'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'cancan', '1.6.8'
 gem 'friendly_id'
+gem 'paperclip'
+gem 'aws-sdk'
 #gem 'orm_adapter', '0.4.0'
 #gem 'warden', '1.2.1'
 #gem 'devise', '2.1.2'

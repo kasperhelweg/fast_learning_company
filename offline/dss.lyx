@@ -1,0 +1,193 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{ccfonts,eulervm} 
+\usepackage[T1]{fontenc}
+\usepackage{daymonthyear}
+\usepackage{boxproof}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language danish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman palatino
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Den svære samtale 
+\end_layout
+
+\begin_layout Standard
+Lær at håndtere en vanskelig samtale, ved at fokusere på løsninger.
+\end_layout
+
+\begin_layout Section
+Hvad er en svær samtale? 
+\end_layout
+
+\begin_layout Standard
+Den svære samtale er et tilbagevendende tema, som alle ledere før eller
+ siden må forholde sig til.
+ Begrebet dækket over en samtalesituation, hvor du må håndtere problemer,
+ som vedrører din medarbejders måde at arbejde på.
+ Samtalen bliver for mange ledere opfattet som svær, fordi den tager afsæt
+ i en problematisk situation.
+ Og det er i selve samtalesituationen med medarbejderen, hvor udfordringen
+ skal findes.
+ Det er individuelt fra leder til leder, hvad man finder mest udfordrende
+ ved den svære samtale.
+ For nogle er det selve det at konfrontere medarbejderen, mens udfordringen
+ for andre er at styre samtalen i den ønskede retning.
+ Du har sikkert en fornemmelse af, hvor din udfordring ligger.
+ Det kan være, at du har svært ved at styre samtalen i en konstruktiv retning,
+ fordi du og din medarbejder fokuserer for meget på baggrunden for problemet.
+ Eller det kan være, at du har svært ved at åbne op for samtalen, fordi
+ du synes, at det er ubehageligt at konfrontere din medarbejder med et problem.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fælles for de svære samtaler er, uanset baggrunden, at de er nødvendige.
+ Griber du ikke til handling, er der en risiko for, at problemet udvikler
+ sig og til sidst ender i en konflikt.
+ Er problemet først blevet til en konflikt, er handlemulighederne begrænsede.
+ Det kan for eksempel føre til, at der ikke er andre muligheder end at afskedige
+ din medarbejder, hvilket går ud over effektiviteten og de projekter, som
+ skal løses her og nu.
+ Men det behøver ikke at nå der til.
+ Ved at være på forkant og være opmærksom på, hvordan du skal gribe den
+ vanskelige samtale an, kan du tage mange problemer i opløbet.
+ Derved kan du undgå, at de udvikler sig til konflikter.
+\end_layout
+
+\begin_layout Section
+Aktionslæring 
+\end_layout
+
+\begin_layout Standard
+For at undgå at problemer ender i en konflikt, vil vi arbejde på at styrke
+ din tilgang til den svære samtale.
+ Derfor vil du også løbende støde på øvelser, hvor du skal arbejde aktivt
+ med den svære samtale, i din daglige ledelse.
+\end_layout
+
+\begin_layout Standard
+I Helweg & Pedersen tror vi på, at du får mest muligt ud af kurset, ved
+ at bringe din egen praksis i spil.
+ Ved at reflektere over din daglige ledelse og arbejde med øvelser, hvor
+ du udfordrer din tilgang til den svære samtale, opnår du en sammenhæng
+ mellem teori og praksis.
+ Vores mål er at skabe synergi mellem uddannelsesforløbet og din personlige
+ ledelse.
+ Denne tilgang til læring kaldes aktionslæring.
+ Filosofien bag aktionslæring, er, at vedvarende refleksion mellem teori
+ og praksis sættes i centrum.
+\end_layout
+
+\begin_layout Section
+En løsningsfokuseret tilgang 
+\end_layout
+
+\begin_layout Standard
+Ved at bringe teori og praksis i spil, kan vi også bedre klæde dig på til
+ at håndtere den svære samtale.
+ Vi vil give dig råd og teknikker til, hvordan du konstruktivt forholder
+ dig som leder til situationen.
+ De råd og teknikker, som du kommer til at arbejde med, tager afsæt i selve
+ baggrunden for samtalen, nemlig at den handler om en problematik, som involvere
+r din medarbejders måde at håndtere sit arbejde på.
+ Når baggrunden for samtalen er klar, nemlig at den centrerer sig om en
+ udfordring, kan vi fokusere på at finde en løsning.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I Helweg & Pedersen mener vi, at den mest konstruktive tilgang til den svære
+ samtale er baseret på en løsningsfokuseret metode.
+ Den løsningsfokuserede metode er handlingsorienteret og fremadrettet.
+ Det vil sige, at metoden fokuser på løsningen af problemet, frem for at
+ finde selve årsagen til problemets opståen.
+ Læringsforløbet tager altså afsæt i den type svære samtaler, hvor medarbejderen
+ stadig har handlemulighed og kan øve indflydelse på løsningen af problemstillin
+gen.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Formålet med forløbet er at udfordre dig i din tilgang til den svære samtale
+ og samtidig give dig konkrete værktøjer til at gribe situationen an.
+ Værktøjerne kan være forskellige fra leder til leder, alt efter hvor dine
+ personlige udfordringer ligger.
+ Vi vil hjælpe dig til at identificere dine personlige udfordringer i forbindels
+e med den svære samtale, og klæde dig på til at arbejde hen mod en løsning.
+\end_layout
+
+\end_body
+\end_document

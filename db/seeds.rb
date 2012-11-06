@@ -87,13 +87,15 @@ mus_classroom_2 = course_MUS.classrooms.build(
 
 mus_classroom_1.pages.build(title: "Forside",
                             glyph: "icon-download",
-                            content: "
+                            content: '
 <h4>Guide til det virtuelle læringsrum</h4>
 <p>
 Kurset sætter fokus på dit personlige lederskab i situationen for den svære samtale. Vi vil arbejde på at give dig konkrete teknikker til at gribe den svære samtale an ud fra en løsningsfokuseret tilgang. I Helweg & Pedersen tror vi på, at den løsningsfokuserede tilgang til samtalen giver det bedste resultat, for dig som leder. Metoden er fremadrettet og fokuserer på, at du får skabt løsninger i samspil med din medarbejder. 
 </p>
 <p>
-Du vil her få en introduktion til, hvordan du skal arbejde med det virtuelle læringsrum for den svære samtale. For at du får mest muligt ud af kurset, anbefaler vi, at du følger vores guide</p>"
+Du vil her få en introduktion til, hvordan du skal arbejde med det virtuelle læringsrum for den svære samtale. For at du får mest muligt ud af kurset, anbefaler vi, at du følger vores guide</p>
+<button class="btn btn-large btn-primary" type="button"><i class="icon-circle-arrow-down icon-white dglyph"></i> Download .PDF</button>
+'
                            )
 mus_classroom_1.pages.build(title: "Introduktion", glyph: "icon-globe")
 mus_classroom_1.pages.build(title: "Forberedelse",  glyph: "icon-leaf")
