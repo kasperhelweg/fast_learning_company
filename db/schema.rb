@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121106011648) do
+ActiveRecord::Schema.define(:version => 20121106220515) do
 
   create_table "classrooms", :force => true do |t|
     t.string   "id_hash"
@@ -60,6 +60,17 @@ ActiveRecord::Schema.define(:version => 20121106011648) do
 
   add_index "pages", ["id_hash"], :name => "index_pages_on_id_hash", :unique => true
   add_index "pages", ["slug"], :name => "index_pages_on_slug"
+
+  create_table "resources", :force => true do |t|
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "resource_file_name"
+    t.string   "resource_content_type"
+    t.integer  "resource_file_size"
+    t.datetime "resource_updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "type",                                   :null => false

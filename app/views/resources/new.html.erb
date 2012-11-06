@@ -1,0 +1,4 @@
+<%= form_for @resource, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :resource %>
+  <%= form.submit "Submit" %>
+<% end %>

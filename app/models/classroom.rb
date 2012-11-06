@@ -1,10 +1,11 @@
 class Classroom < ActiveRecord::Base
   
   belongs_to :course
-  has_many :enrollments
-  has_many :learners, :through => :enrollments
+  has_many   :enrollments
+  has_many   :learners, :through => :enrollments
 
-  has_many :pages, :as => :pageable
+  has_many :pages,  :as => :pageable
+  has_many :resources, :as => :attachable
 
   before_create :create_id_hash
   before_create :set_dates

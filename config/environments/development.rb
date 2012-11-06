@@ -2,6 +2,16 @@ FastLearningCompany::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'ee14e1407f80ba91c4e21deb76e801076bc78a5d903cb70a87097ed4841a8ff0',
+      :access_key_id => 'AKIAJIWIVSBADTJPJB2A',
+      :secret_access_key => '0jUiPai2asqKkWqvo2eYevlFlFTJdUlLOox4MZ0/'
+    }
+  }
+  
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.

@@ -36,7 +36,11 @@ FastLearningCompany::Application.routes.draw do
   
   # Admin for pages
   resources :pages
+
+  resources :resources
+
   
+
   # Errors routing
   match '*a', :to => 'errors#routing'
 
