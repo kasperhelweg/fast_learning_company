@@ -1,5 +1,6 @@
 class ClassroomsController < ApplicationController
-  
+  layout "classrooms"
+
   respond_to :html, :xml, :json
 
   def index
@@ -15,6 +16,8 @@ class ClassroomsController < ApplicationController
   end
 
   def show
+    @classroom = Classroom.find_by_id_hash( params[:id] )
+    @sections = @classroom.pages
   end
   
   def update

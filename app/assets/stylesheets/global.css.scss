@@ -40,9 +40,7 @@ html {
   overflow-y: scroll;
 }
 
-body {
-  padding-top: 80px;
-}
+body { font-family: adelle-1, adelle-2, Helvetica, Arial, sans-serif; background: #f9f9f9; line-height: 23px; padding-top: 80px; }
 
 section {
   overflow: auto;
@@ -83,7 +81,12 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
-
+h1                { text-shadow: white 1px 1px 0px; color: #333333; font-style: normal; font-weight: normal; font-size: 38px; margin-bottom: 0.5em; line-height: 1.1em; }
+h2                { text-shadow: white 1px 1px 0px; color: #333333; font-style: normal; font-weight: 200; font-size: 28px; margin-bottom: 10px; line-height: 1.25em; }
+h3                { text-shadow: white 1px 1px 0px; color: #333333; font-style: normal; font-weight: normal; font-size: 24px; margin-bottom: 10px; line-height: 1.1em; }
+h3.intro          { color: #235B88; font-size: 21px; text-align: center; line-height: 1.3em; }
+h4                { text-shadow: white 1px 1px 0px; color: #599716; font-style: normal; font-weight: normal; font-size: 19px; margin-bottom: 10px; padding-top: 8px; line-height: 1em; }
+h5                { text-shadow: white 1px 1px 0px; color: #333333; font-style: normal; font-weight: normal; font-size: 13px; margin-bottom: 0.5em; line-height: 1em; }
 
 /* header */
 

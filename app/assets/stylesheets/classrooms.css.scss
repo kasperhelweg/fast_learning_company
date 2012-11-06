@@ -1,3 +1,28 @@
 // Place all the styles related to the Classrooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1                { text-shadow: white 1px 1px 0px; color: #333333; font-style: normal; font-weight: normal; font-size: 38px; margin-bottom: 0.5em; line-height: 1.1em; }
+h2                { text-shadow: white 1px 1px 0px; color: #333333; font-style: normal; font-weight: 200; font-size: 28px; margin-bottom: 10px; line-height: 1.25em; }
+h3                { text-shadow: white 1px 1px 0px; color: #333333; font-style: normal; font-weight: normal; font-size: 24px; margin-bottom: 10px; line-height: 1.1em; }
+h3.intro          { color: #235B88; font-size: 21px; text-align: center; line-height: 1.3em; }
+h4                { text-shadow: white 1px 1px 0px; color: #599716; font-style: normal; font-weight: normal; font-size: 19px; margin-bottom: 10px; padding-top: 8px; line-height: 1em; }
+h5                { text-shadow: white 1px 1px 0px; color: #333333; font-style: normal; font-weight: normal; font-size: 13px; margin-bottom: 0.5em; line-height: 1em; }
+
+.inner            { margin: 0 auto; width: 960px; }
+
+/* ======= Utility ======= */
+
+.left             { display: inline; float: left; }
+.right            { display: inline; float: right; }
+.center           { text-align: center; }
+img.left          { margin: 0px 25px 20px 0px; }
+img.right         { margin: 0px 0px 20px 25px; }
+.clear            { clear: both; font-size: 0; height: 0; line-height: 0; }
+.clearfixafter    { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+* html .clearfix  { height: 1%; }
+.clearfix         { overflow: hidden; display: inline-block; }
+
+/* ======= Structure: splash ======= */
+
+

@@ -11,7 +11,7 @@ FastLearningCompany::Application.routes.draw do
 
   # Users
 
-  resources :users
+  resources :users, :path_names => { :edit => 'account' } 
   # Companies
   #resources :companies
 
@@ -19,7 +19,10 @@ FastLearningCompany::Application.routes.draw do
  # resources :learners
   # Courses
   resources :courses  
-  resources :classrooms
+  resources :classrooms do
+    resources :pages, except: [:show]
+    match ':id(.:format)',  to: 'pages#show', as: :page, via: :get
+  end
   
   # Sign in / up and stuff / sessions
   resources :sessions, only: [:new, :create, :destroy]
@@ -30,6 +33,8 @@ FastLearningCompany::Application.routes.draw do
     
   # For resetting passwords
   resources :passwords
+
+
   
   # Errors routing
   match '*a', :to => 'errors#routing'

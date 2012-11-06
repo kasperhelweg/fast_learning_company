@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105214410) do
+ActiveRecord::Schema.define(:version => 20121106011648) do
 
   create_table "classrooms", :force => true do |t|
     t.string   "id_hash"
@@ -43,6 +43,22 @@ ActiveRecord::Schema.define(:version => 20121105214410) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  create_table "pages", :force => true do |t|
+    t.string   "id_hash",       :null => false
+    t.string   "title",         :null => false
+    t.string   "desc"
+    t.integer  "order"
+    t.text     "content"
+    t.string   "slug"
+    t.integer  "pageable_id"
+    t.string   "pageable_type"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "pages", ["id_hash"], :name => "index_pages_on_id_hash", :unique => true
+  add_index "pages", ["slug"], :name => "index_pages_on_slug"
 
   create_table "users", :force => true do |t|
     t.string   "type",                                   :null => false

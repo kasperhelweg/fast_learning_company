@@ -85,6 +85,20 @@ mus_classroom_1 = course_MUS.classrooms.build(
 mus_classroom_2 = course_MUS.classrooms.build(
                 online_date: Date.tomorrow )
 
+mus_classroom_1.pages.build(title: "Forside",
+                            content: "Yo bow wow"
+                            )
+mus_classroom_1.pages.build(title: "Introduktion")
+mus_classroom_1.pages.build(title: "Forberedelse")
+mus_classroom_1.pages.build(title: "Kursusdagen")
+mus_classroom_1.pages.build(title: "Opfølgning")
+mus_classroom_1.pages.build(title: "Test")
+mus_classroom_1.pages.build(title: "Evaluering")
+mus_classroom_1.pages.build(title: "Bibliotek")
+
+
+
+
 
 course_MUS.save!
 
@@ -93,3 +107,4 @@ test_Enrollment_02 = Enrollment.create(
                       learner_id: 3,
                       classroom_id: 1,
                       status: "enrolled" )
+
