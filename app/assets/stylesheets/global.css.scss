@@ -2,7 +2,7 @@ $navbarHeight: 50px;
 
 @import "bootstrap";
 
-/* mixins, variables, etc. */
+/* =======  mixins, variables, etc. ======= */
 
 $grayMediumLight: #eaeaea;
 
@@ -12,7 +12,7 @@ $grayMediumLight: #eaeaea;
   box-sizing: border-box;
 }
 
-/* Navbar */
+/* ======= NavBar ======= */
 .navbar {
   overflow: visible;
   margin-bottom: 20px;
@@ -33,14 +33,27 @@ $grayMediumLight: #eaeaea;
 }
 
 
+/* ======= Utility ======= */
+.inner            { margin: 0 auto; width: 960px; }
+.left             { display: inline; float: left; }
+.right            { display: inline; float: right; }
+.center           { text-align: center; }
+img.left          { margin: 0px 25px 20px 0px; }
+img.right         { margin: 0px 0px 20px 25px; }
+.clear            { clear: both; font-size: 0; height: 0; line-height: 0; }
+.clearfixafter    { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+* html .clearfix  { height: 1%; }
+.clearfix         { overflow: hidden; display: inline-block; }
+.glyph            { margin-bottom: 10px; }
+.content        { margin-top: 30px; } 
 
-/* universal */
 
+/* ======= Global ======= */
 html {
   overflow-y: scroll;
 }
 
-body { font-family: adelle-1, adelle-2, Helvetica, Arial, sans-serif; background: #f9f9f9; line-height: 23px; padding-top: 80px; }
+body { font-family: adelle-1, adelle-2, Helvetica, Arial, sans-serif; background: #f9f9f9; line-height: 23px; padding-top: 50px; }
 
 section {
   overflow: auto;
@@ -57,39 +70,23 @@ textarea {
   }
 }
 
-/* typography */
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-}
-
-h2 {
-  font-size: 1.7em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  font-weight: normal;
-  color: $grayLight;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
+/* ======= Typography ======= */
 h1                { text-shadow: white 1px 1px 0px; color: #333333; font-style: normal; font-weight: normal; font-size: 38px; margin-bottom: 0.5em; line-height: 1.1em; }
 h2                { text-shadow: white 1px 1px 0px; color: #333333; font-style: normal; font-weight: 200; font-size: 28px; margin-bottom: 10px; line-height: 1.25em; }
 h3                { text-shadow: white 1px 1px 0px; color: #333333; font-style: normal; font-weight: normal; font-size: 24px; margin-bottom: 10px; line-height: 1.1em; }
 h3.intro          { color: #235B88; font-size: 21px; text-align: center; line-height: 1.3em; }
-h4                { text-shadow: white 1px 1px 0px; color: #599716; font-style: normal; font-weight: normal; font-size: 19px; margin-bottom: 10px; padding-top: 8px; line-height: 1em; }
-h5                { text-shadow: white 1px 1px 0px; color: #333333; font-style: normal; font-weight: normal; font-size: 13px; margin-bottom: 0.5em; line-height: 1em; }
+h4                { text-shadow: white 1px 1px 0px; color: #599716; font-style: normal; font-weight: normal; font-size: 26px; margin-bottom: 10px; padding-top: 8px; line-height: 1em; }
 
-/* header */
+h5                { text-shadow: white 0px 0px 0px; color: #3f4c6b; font-style: normal; font-weight: bold; font-size: 13px; margin-bottom: 0.5em; line-height: 1em; }
+h6                { text-shadow: white 1px 1px 0px; color: #599716; font-style: normal; font-weight: normal; font-size: 19px; margin-bottom: 10px; padding-top: 8px; line-height: 1em; }
 
+li ul, li ol      { margin: 0 1.5em; }
+ul                { margin: 0 1em 1.5em; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;; list-style-type: disc; color: #4D4F50; }
+
+p { font-size: 1.2em; line-height: 1.7em; text-align:justify; }
+
+
+/* ======= Header ======= */
 #logo {
   float: left;
   margin-right: 10px;
@@ -106,8 +103,7 @@ h5                { text-shadow: white 1px 1px 0px; color: #333333; font-style: 
   }
 }
 
-/* footer */
-
+/* ======= Footer ======= */
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -132,7 +128,7 @@ footer {
   }
 }
 
-/* forms */
+/* ======= Forms ======= */
 #error_explanation {
     color: #f00;
     ul {
@@ -148,8 +144,13 @@ footer {
     }
 }
 
-/* miscellaneous */
+/* ======= Flahs ======= */
+.alert  { text-shadow: white 1px 1px 0px; color: #3f4c6b; 
+	  font-style: normal; font-weight: normal; font-size: 14px; 
+	  margin-bottom: 10px; padding-top: 8px; line-height: 1em; padding: 15px; 
+	}
 
+/* ======= Misc ======= */
 .debug_dump {
   clear: both;
   float: left;

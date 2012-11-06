@@ -1,68 +1,24 @@
-<header class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="brand push-left" href="<%= root_path %>">	
-	<%= image_tag("sendgrid-logo.png", :size => "112x30", alt: "Fastlearning") %>     
-      </a>
-      <nav>
-
-        <ul class="nav pull-right">	
-          <li><%= link_to "Forside",  root_path %></li>
-          <li><%= link_to "Kalender", calendar_path %></li>
-          <li><%= link_to "Kurser",   courses_path %></li>
-	  <li class="divider-vertical"></li>
-	  <% if user_signed_in? %>
-	  <li id="fat-menu" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-	      <%= current_user.name %> <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-	      <li><%= link_to "Profil", current_user %></li>
-	      <% if current_user.role? :company %>
-	        <li><%= link_to "Konto", edit_user_path( current_user )  %></li>
-	      <% else %>
-	        <li><%= link_to "Indstillinger", edit_user_path( current_user )  %></li>
-	      <% end %>
-	      <li class="divider"></li>
-	      <li>
-		<%= link_to "Log af",  signout_path, :method => :delete %>
-	      </li>
-            </ul>
-          </li>
-	  <% else %>
-	    <li><%= link_to "Log på",  signin_path %></li>
-	    <% end %>
-
-        </ul>
-
-      </nav>
-
-    </div>
-  </div>
-
-  <div class="container">
- 
-       <div class="splash-nav products">
+<div class="splash-nav">
   <div class="splash-nav-inner">
     <div class="inner">
       <ul>
+	  
 	<% @sections.each do |page| %>
-
-	  <li class="">
-	    <%= link_to( [@classroom, page] ) do %>
-	      <h4><%= page.title %></h4>
-	      <p><%= page.desc %></p>
-	    <% end %>
-   	  </li>
-
+	  
+	<li class="">
+	  <%= link_to( [@classroom, page] ) do %>
+	  <center> <i class="<%=page.glyph + " glyph" %>" ></i></center>
+	  <h5><%= page.title %></h5>
+	  <p><%= page.desc %></p>
+	  <% end %>
+   	</li>
+	  
 	<% end %>
-
+	  
         <div class="clear"></div>
       </ul>
       <div class="clear"></div>
     </div>
   </div>
 </div>
-      </div>
-</header>
 

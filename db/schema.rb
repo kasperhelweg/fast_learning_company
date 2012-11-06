@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20121106011648) do
   create_table "pages", :force => true do |t|
     t.string   "id_hash",       :null => false
     t.string   "title",         :null => false
+    t.string   "glyph"
     t.string   "desc"
     t.integer  "order"
     t.text     "content"

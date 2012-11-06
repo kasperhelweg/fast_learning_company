@@ -4,6 +4,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :id_hash,          :null => false
 
       t.string  :title,            :null => false
+      t.string  :glyph
       t.string  :desc
       t.integer :order
 

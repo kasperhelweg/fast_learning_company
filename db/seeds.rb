@@ -86,15 +86,22 @@ mus_classroom_2 = course_MUS.classrooms.build(
                 online_date: Date.tomorrow )
 
 mus_classroom_1.pages.build(title: "Forside",
-                            content: "Yo bow wow"
-                            )
-mus_classroom_1.pages.build(title: "Introduktion")
-mus_classroom_1.pages.build(title: "Forberedelse")
-mus_classroom_1.pages.build(title: "Kursusdagen")
-mus_classroom_1.pages.build(title: "Opfølgning")
-mus_classroom_1.pages.build(title: "Test")
-mus_classroom_1.pages.build(title: "Evaluering")
-mus_classroom_1.pages.build(title: "Bibliotek")
+                            glyph: "icon-download",
+                            content: "
+<h4>Guide til det virtuelle læringsrum</h4>
+<p>
+Kurset sætter fokus på dit personlige lederskab i situationen for den svære samtale. Vi vil arbejde på at give dig konkrete teknikker til at gribe den svære samtale an ud fra en løsningsfokuseret tilgang. I Helweg & Pedersen tror vi på, at den løsningsfokuserede tilgang til samtalen giver det bedste resultat, for dig som leder. Metoden er fremadrettet og fokuserer på, at du får skabt løsninger i samspil med din medarbejder. 
+</p>
+<p>
+Du vil her få en introduktion til, hvordan du skal arbejde med det virtuelle læringsrum for den svære samtale. For at du får mest muligt ud af kurset, anbefaler vi, at du følger vores guide</p>"
+                           )
+mus_classroom_1.pages.build(title: "Introduktion", glyph: "icon-globe")
+mus_classroom_1.pages.build(title: "Forberedelse",  glyph: "icon-leaf")
+mus_classroom_1.pages.build(title: "Kursusdagen",  glyph: "icon-heart")
+mus_classroom_1.pages.build(title: "Opfølgning",  glyph: "icon-bell")
+mus_classroom_1.pages.build(title: "Test",  glyph: "icon-pencil")
+mus_classroom_1.pages.build(title: "Evaluering",  glyph: "icon-tag")
+mus_classroom_1.pages.build(title: "Bibliotek",  glyph: "icon-book")
 
 
 

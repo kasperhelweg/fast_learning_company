@@ -5,7 +5,7 @@ class Page < ActiveRecord::Base
   
   before_create :create_id_hash
 
-  attr_accessible :title, :desc, :content
+  attr_accessible :title, :glyph, :desc, :content
   
   ##############################################################
   # Public interface
