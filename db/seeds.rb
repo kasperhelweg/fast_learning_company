@@ -36,7 +36,7 @@ user_comp_1.save!
 user_comp_2.save!
 
 # Seed courses
-course_MUS = Course.new(
+course_MUS = Course.create(
                 title: "MUS samtaler",
                 short_desc: "Velkommen til MUS",
                 desc: "Dette kursus henvender sig..." )
@@ -52,15 +52,15 @@ course_SITUATION = Course.create(
                 desc: "Dette kursus henvender sig..." )
 
 
-course_KONFLIKT = Course.create(
+course_KONFLIKT = Course.new(
                 title: "Konflikthåndtering",
                 short_desc: "Velkommen til Konflikthåndtering",
                 desc: "Dette kursus henvender sig..." )
 
 
-course_VANSKELIG = Course.create(
-                title: "Vanskelige samtaler",
-                short_desc: "Velkommen til Vanskelige samtaler",
+course_VANSKELIG = Course.new(
+                title: "Den svære samtale",
+                short_desc: "Velkommen til Den svære samtale",
                 desc: "Dette kursus henvender sig..." )
 
 course_PRESENTATION = Course.create(
@@ -79,10 +79,13 @@ course_GRUND = Course.create(
                 desc: "Dette kursus henvender sig..." )
 
 # Seed classrooms
-mus_classroom_1 = course_MUS.classrooms.build(
+mus_classroom_1 = course_VANSKELIG.classrooms.build(
                 online_date: Date.today )
                 
-mus_classroom_2 = course_MUS.classrooms.build(
+mus_classroom_2 = course_VANSKELIG.classrooms.build(
+                online_date: Date.today + 14 )
+
+konflikt_classroom_1 = course_KONFLIKT.classrooms.build(
                 online_date: Date.today + 14 )
 
 mus_classroom_1.pages.build(title: "Forside",
@@ -101,7 +104,7 @@ mus_classroom_1.pages.build(title: "Introduktion",
                             content: '
 <h4>Den svære samtale</h4>
 <p>Lær at håndtere en vanskelig samtale, ved at fokusere på løsninger.</p>
-<a href="http://s3.amazonaws.com/ee14e1407f80ba91c4e21deb76e801076bc78a5d903cb70a87097ed4841a8ff0/resources/resources/000/000/002/original/dss.pdf?1352240664" class="btn btn-large btn-primary">Download .PDF</a>
+<a href="http://s3.amazonaws.com/ee14e1407f80ba91c4e21deb76e801076bc78a5d903cb70a87097ed4841a8ff0/resources/resources/000/000/002/original/dss.pdf?1352240664" class="btn btn-large btn-primary"><i class="icon-circle-arrow-down icon-white dglyph"></i>Download .PDF</a>
 '
                             )
 
@@ -131,10 +134,16 @@ mus_classroom_1.pages.build(title: "Bibliotek",
                             content: '<h4>Bibliotek</h4>'
                             )
 
-course_MUS.save!
+course_VANSKELIG.save!
+course_KONFLIKT.save!
+
+test_Enrollment_01 = Enrollment.create(
+                      learner_id: 3,
+                      classroom_id: 1,
+                      status: "enrolled" )
 
 test_Enrollment_02 = Enrollment.create(
                       learner_id: 3,
-                      classroom_id: 1,
+                      classroom_id: 3,
                       status: "enrolled" )
 

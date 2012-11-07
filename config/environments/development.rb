@@ -5,6 +5,7 @@ FastLearningCompany::Application.configure do
 
   config.paperclip_defaults = {
     :storage => :s3,
+    :s3_permissions => :private,
     :s3_credentials => {
       :bucket => 'ee14e1407f80ba91c4e21deb76e801076bc78a5d903cb70a87097ed4841a8ff0',
       :access_key_id => 'AKIAJIWIVSBADTJPJB2A',

@@ -1,15 +1,23 @@
 <% provide(:title, current_user.name) %>
-<%= current_user.name %>
-
 <% if current_user.role? :learner %>
-<ul class="classrooms">
+<div class="cl-header cl-header-inner">
+  <h3 class="alt">Læringsrum</h3>
+</div>
   <% current_user.classrooms.each do |classroom| %>
-  <li>
-    <%= link_to classroom.course.title, [classroom, classroom.pages.where("title = 'Forside'").first] %> 
-  </li>
-  
- 
-  <% end %>
-</ul>
 
-<% end %> 
+  <%= link_to [classroom, classroom.pages.where("title = 'Forside'").first] do %> 
+  <div class="classrooms thumb L">
+    <div class="ribbon-wrapper">
+      <div class="ribbon green"><%= classroom.online_date.strftime("%d %b %y") %></div>
+    </div>
+    <div class="thumb-inner L">
+      <h3 class="alt"><div><%= classroom.course.title %></div></h3>
+      <h4 class="alt">Du er tilmeldt dette læringsrum</h4>
+    </div>
+  </div>
+  
+  <% end %>
+  <% end %>
+  <div class="clear"></div>
+  <% end %> 
+    

@@ -81,6 +81,10 @@ h4                { text-shadow: white 1px 1px 0px; color: #599716; font-style: 
 h5                { text-shadow: white 0px 0px 0px; color: #3f4c6b; font-style: normal; font-weight: bold; font-size: 13px; margin-bottom: 0.5em; line-height: 1em; }
 h6                { text-shadow: white 1px 1px 0px; color: #599716; font-style: normal; font-weight: normal; font-size: 19px; margin-bottom: 10px; padding-top: 8px; line-height: 1em; }
 
+
+h7                { text-shadow: white 0px 0px 0px; color: #3f4c6b; font-style: normal; font-weight: bold; font-size: 10px; margin-bottom: 0.5em; line-height: 1em; }
+h8                { text-shadow: white 0px 0px 0px; color: #3f4c6b; font-style: normal; font-weight: bold; font-size: 13px; margin-bottom: 0.0em; line-height: 1em; }
+
 li ul, li ol      { margin: 0 1.5em; }
 ul                { margin: 0 1em 1.5em; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;; list-style-type: disc; color: #4D4F50; }
 
@@ -104,30 +108,33 @@ p { font-size: 1.2em; line-height: 1.7em; text-align:justify; }
   }
 }
 
-/* ======= Footer ======= */
+/* ======= Structure: footer ======= */
+
+
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
-  a {
-    color: $gray;
-    &:hover { 
-      color: $grayDarker;
+    margin-top: 90px;
+    padding-top: 5px;
+    border-top: 1px solid $grayMediumLight;
+    color: $grayLight;
+    a {
+	color: $gray;
+	&:hover { 
+	    color: $grayDarker;
+	}
+    }  
+    small { 
+	float: left; 
     }
-  }  
-  small { 
-    float: left; 
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 10px;
+    ul {
+	float: right;
+	list-style: none;
+	li {
+	    float: left;
+	    margin-left: 10px;
+	}
     }
-  }
 }
+
 
 /* ======= Forms ======= */
 #error_explanation {
