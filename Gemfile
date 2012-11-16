@@ -7,13 +7,14 @@ gem 'cancan', '1.6.8'
 gem 'friendly_id'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'dalli'
 #gem 'orm_adapter', '0.4.0'
 #gem 'warden', '1.2.1'
 #gem 'devise', '2.1.2'
 
 #gem 'foreigner', '1.2.0'
 #gem 'sidekiq'
-#gem 'dalli'
+
 #gem 'activemerchant'
 
 # Bundle edge Rails instead:

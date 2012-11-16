@@ -9,133 +9,208 @@
 
 # Seed users
 user_comp_1 = Company.new( 
-                name: "Helweg & Pedersen",
-                email: "info@helweg-pedersen.dk", 
-                password: "123456", 
-                password_confirmation: "123456" )
+                          name: "Helweg & Pedersen",
+                          email: "info@helweg-pedersen.dk", 
+                          password: "123456", 
+                          password_confirmation: "123456" )
 
 user_comp_2 = Company.new( 
-                name: "Some Company",
-                email: "info@somecompany.com", 
-                password: "123456", 
-                password_confirmation: "123456" )
+                          name: "Some Company",
+                          email: "info@somecompany.com", 
+                          password: "123456", 
+                          password_confirmation: "123456" )
 
 user_emp_1 = user_comp_1.learners.build(
-                name: "Stinne Tarp",
-                email: "stinne@helweg-pedersen.dk", 
-                password: "123456", 
-                password_confirmation: "123456" )
+                                        name: "Stinne Tarp",
+                                        email: "stinne@helweg-pedersen.dk", 
+                                        password: "123456", 
+                                        password_confirmation: "123456" )
 
 user_emp_2 = user_comp_1.learners.build(
-                name: "Kasper Helweg",
-                email: "kasperhelweg@gmail.com", 
-                password: "kiss2211", 
-                password_confirmation: "kiss2211" )
+                                        name: "Kasper Helweg",
+                                        email: "kasperhelweg@gmail.com", 
+                                        password: "kiss2211", 
+                                        password_confirmation: "kiss2211" )
+
+
+user_emp_2.avatar = File.open("/home/kasper/Pictures/kaps.png")
+
 
 user_comp_1.save!
 user_comp_2.save!
 
 # Seed courses
-course_MUS = Course.create(
-                title: "MUS samtaler",
-                short_desc: "Velkommen til MUS",
-                desc: "Dette kursus henvender sig..." )
+course_MUS = Course.new(
+                           title: "MUS samtaler",
+                           short_desc: "Velkommen til MUS",
+                           desc: "Dette kursus henvender sig...",
+                           color: "#EACD27" 
+                           )
 
 course_TEAMLEDELSE = Course.create(
-                title: "Teamledelse",
-                short_desc: "Velkommen til Teamledelse",
-                desc: "Dette kursus henvender sig..." )
+                                   title: "Teamledelse",
+                                   short_desc: "Velkommen til Teamledelse",
+                                   desc: "Dette kursus henvender sig...",
+                                   color: "#9900AD" 
+                                   )
 
 course_SITUATION = Course.create(
-                title: "Situationsbestemt ledelse",
-                short_desc: "Velkommen til Situationsbestemt ledelse",
-                desc: "Dette kursus henvender sig..." )
+                                 title: "Situationsbestemt ledelse",
+                                 short_desc: "Velkommen til Situationsbestemt ledelse",
+                                 desc: "Dette kursus henvender sig..." )
 
 
 course_KONFLIKT = Course.new(
-                title: "Konflikthåndtering",
-                short_desc: "Velkommen til Konflikthåndtering",
-                desc: "Dette kursus henvender sig..." )
+                             title: "Konflikthåndtering",
+                             short_desc: "Velkommen til Konflikthåndtering",
+                             desc: "Dette kursus henvender sig...",
+                             color: "#107F00" 
+                             )
 
 
 course_VANSKELIG = Course.new(
-                title: "Den svære samtale",
-                short_desc: "Velkommen til Den svære samtale",
-                desc: "Dette kursus henvender sig..." )
+                              title: "Den svære samtale",
+                              short_desc: "Velkommen til Den svære samtale",
+                              desc: "Dette kursus henvender sig...",
+                              color: "#9900AD"  
+                              )
 
 course_PRESENTATION = Course.create(
-                title: "Præsentations teknik",
-                short_desc: "Velkommen til Præsentations teknik",
-                desc: "Dette kursus henvender sig..." )
+                                    title: "Præsentations teknik",
+                                    short_desc: "Velkommen til Præsentations teknik",
+                                    desc: "Dette kursus henvender sig..." )
 
 course_MOEDE = Course.create(
-                title: "Mødeledelse",
-                short_desc: "Velkommen til Mødeledelse",
-                desc: "Dette kursus henvender sig..." )
+                             title: "Mødeledelse",
+                             short_desc: "Velkommen til Mødeledelse",
+                             desc: "Dette kursus henvender sig..." )
 
 course_GRUND = Course.create(
-                title: "Grundlæggende ledelse",
-                short_desc: "Velkommen til Grundlæggende ledelse",
-                desc: "Dette kursus henvender sig..." )
+                             title: "Grundlæggende ledelse",
+                             short_desc: "Velkommen til Grundlæggende ledelse",
+                             desc: "Dette kursus henvender sig..." )
 
 # Seed classrooms
 mus_classroom_1 = course_VANSKELIG.classrooms.build(
-                online_date: Date.today )
-                
+                                                    online_date: Date.today )
+
 mus_classroom_2 = course_VANSKELIG.classrooms.build(
-                online_date: Date.today + 14 )
+                                                    online_date: Date.today + 14 )
 
 konflikt_classroom_1 = course_KONFLIKT.classrooms.build(
-                online_date: Date.today + 14 )
+                                                        online_date: Date.today + 14 )
+
+mUS_classroom_1 = course_MUS.classrooms.build(
+                                              online_date: Date.today + 14 )
 
 mus_classroom_1.pages.build(title: "Forside",
                             glyph: "icon-download",
                             content: '
-<h4>Guide til det virtuelle læringsrum</h4>
-<p>
-Kurset sætter fokus på dit personlige lederskab i situationen for den svære samtale. Vi vil arbejde på at give dig konkrete teknikker til at gribe den svære samtale an ud fra en løsningsfokuseret tilgang. I Helweg & Pedersen tror vi på, at den løsningsfokuserede tilgang til samtalen giver det bedste resultat, for dig som leder. Metoden er fremadrettet og fokuserer på, at du får skabt løsninger i samspil med din medarbejder. 
-</p>
-<p>
-Du vil her få en introduktion til, hvordan du skal arbejde med det virtuelle læringsrum for den svære samtale. For at du får mest muligt ud af kurset, anbefaler vi, at du følger vores guide</p>
+<div class="row content-classroom">
+  <div class="span9"> 
+    <h4>Guide til det virtuelle læringsrum</h4>
+    <p>
+      Kurset sætter fokus på dit personlige lederskab i situationen for den svære samtale. Vi vil arbejde på at give dig konkrete teknikker til at gribe den svære samtale an ud fra en løsningsfokuseret tilgang. I Helweg & Pedersen tror vi på, at den løsningsfokuserede tilgang til samtalen giver det bedste resultat, for dig som leder. Metoden er fremadrettet og fokuserer på, at du får skabt løsninger i samspil med din medarbejder. 
+    </p>
+    <p>
+      Du vil her få en introduktion til, hvordan du skal arbejde med det virtuelle læringsrum for den svære samtale. For at du får mest muligt ud af kurset, anbefaler vi, at du følger vores guide:</p>
+  </div>
+
+<div class="clear"></div>
+
+  <div class="span8">
+    <h4>Introduktion til kurset</h4>
+    <p>Her vil du blive præsenteret for baggrunden for kurset og hvorfor vi i Helweg & Pedersen ser temaet som relevant for dig som leder. Du vil stifte bekendtskab med nogle eksempler på den svære samtale – og samtidig også få en mere nuanceret forståelse for, hvornår en samtale kan siges at være svær.</p>
+  </div>
+  <div class="span4"><img alt="Convert-html" height="226" src="/assets/convert-html.png" width="285" /></div>
+  
+  <div class="span4"><img alt="Thumbnail-files" height="226" src="/assets/thumbnail-files.png" width="285" /></div>
+  <div class="span8">
+    <h4>Forberedelse</h4>
+    <p>Når du har sat dig ind i baggrunden for den svære samtale, er næste skridt din forberedelse. Forberedelsen har til formål at klæde dig bedst muligt på til kursusdagen, hvor din tilgang til den svære samtale vil blive sat i spil.
+    </p>
+  </div>
+</div>
 '
                            )
 mus_classroom_1.pages.build(title: "Introduktion", 
                             glyph: "icon-globe",
                             content: '
+<div class="row content-classroom">
+ <div class="span9"> 
 <h4>Den svære samtale</h4>
 <p>Lær at håndtere en vanskelig samtale, ved at fokusere på løsninger.</p>
-<a href="http://s3.amazonaws.com/ee14e1407f80ba91c4e21deb76e801076bc78a5d903cb70a87097ed4841a8ff0/resources/resources/000/000/002/original/dss.pdf?1352240664" class="btn btn-large btn-primary"><i class="icon-circle-arrow-down icon-white dglyph"></i>Download .PDF</a>
+<a href="https://s3.amazonaws.com/2ee49c5a83c63507e858d59c850ac4e0fb9d89d4214fcc4744a23fe213412454/resources/resources/000/000/001/original/dss.pdf" class="btn btn-large btn-primary"><i class="icon-circle-arrow-down icon-white dglyph"></i>Download .PDF</a>
+</div>
+</div>
 '
                             )
 
 mus_classroom_1.pages.build(title: "Forberedelse",  
                             glyph: "icon-leaf",
-                            content: '<h4>Forberedelse</h4>'
+                            content: '
+<div class="row content-classroom">
+  <div class="span9"> 
+    <h4>Forberedelse</h4>
+  </div>
+</div>
+'
                             )
 
 mus_classroom_1.pages.build(title: "Kursusdagen",  
                             glyph: "icon-heart",
-                            content: '<h4>Kursusdagen</h4>'
+                            content: '
+<div class="row content-classroom">
+  <div class="span9"> 
+    <h4>Kursusdagen</h4>
+  </div>
+</div>
+'
                             )
 mus_classroom_1.pages.build(title: "Opfølgning",  
                             glyph: "icon-bell",
-                            content: '<h4>Opfølgning</h4>'
+                            content: '
+<div class="row content-classroom">
+  <div class="span9"> 
+    <h4>Opfølgning</h4>
+  </div>
+</div>
+'
                             )
 mus_classroom_1.pages.build(title: "Test",  
                             glyph: "icon-pencil",
-                            content: '<h4>Test</h4>'
+                            content: '
+<div class="row content-classroom">
+  <div class="span9"> 
+    <h4>Test</h4>
+  </div>
+</div>
+'
                             )
 mus_classroom_1.pages.build(title: "Evaluering",  
                             glyph: "icon-tag",
-                            content: '<h4>Evaluering</h4>'
+                            content: '
+<div class="row content-classroom">
+  <div class="span9"> 
+    <h4>Evaluering</h4>
+  </div>
+</div>
+'
                             )
 mus_classroom_1.pages.build(title: "Bibliotek",  
                             glyph: "icon-book",
-                            content: '<h4>Bibliotek</h4>'
+                            content: '
+<div class="row content-classroom">
+  <div class="span9"> 
+    <h4>Bibliotek</h4>
+  </div>
+</div>
+'
                             )
 
 course_VANSKELIG.save!
 course_KONFLIKT.save!
+course_MUS.save!
 
 test_Enrollment_01 = Enrollment.create(
                       learner_id: 3,
@@ -147,3 +222,8 @@ test_Enrollment_02 = Enrollment.create(
                       classroom_id: 3,
                       status: "enrolled" )
 
+
+test_Enrollment_03 = Enrollment.create(
+                      learner_id: 3,
+                      classroom_id: 4,
+                      status: "enrolled" )

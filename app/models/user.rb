@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
-  attr_accessible :name, :email, :password, :password_confirmation 
+  attr_accessible :name, :email, :password, :password_confirmation, :avatar
   before_create   :create_id_hash
   before_save     :downcase_email
   before_save     :fix_name
@@ -21,6 +21,11 @@ class User < ActiveRecord::Base
                   
   validates       :password_confirmation, presence: true,
                   :if => lambda{ !password.nil? && !password.empty? }
+
+  has_attached_file :avatar, 
+                    :styles => { :medium => "140x140>", :thumb => "35x35>" },
+                    :path => "/avatars/:style/:id/:filename",
+                    :s3_permissions => :public_read
 
   ##############################################################
   # Public interface

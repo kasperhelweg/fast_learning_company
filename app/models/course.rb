@@ -3,7 +3,7 @@ class Course < ActiveRecord::Base
 
   before_create :create_id_hash
 
-  attr_accessible :desc, :short_desc, :title
+  attr_accessible :desc, :short_desc, :title, :color
   
   def to_param
     id_hash

@@ -33,6 +33,7 @@ $grayMediumLight: #eaeaea;
 }
 
 
+
 /* ======= Utility ======= */
 .inner            { margin: 0 auto; width: 960px; }
 .left             { display: inline; float: left; }
@@ -46,15 +47,17 @@ img.right         { margin: 0px 0px 20px 25px; }
 .clearfix         { overflow: hidden; display: inline-block; }
 .glyph            { margin-bottom: 10px; }
 .dglyph           { margin-right: 10px; }
-.content        { margin-top: 30px; } 
-
+.content          { margin-top: 30px; } 
+.content-classroom          { margin-top: 75px; } 
+.avatar           { margin-top: 6px; margin-left:5px; }
+/* #user_avatar      { color: #fff; margin-top: 60px; margin-left:5px; } */
 
 /* ======= Global ======= */
 html {
   overflow-y: scroll;
 }
 
-body { font-family: adelle-1, adelle-2, Helvetica, Arial, sans-serif; background: #f9f9f9; line-height: 23px; padding-top: 50px; }
+body { font-family: adelle-1, adelle-2, Helvetica, Arial, sans-serif; background: #F9F9F9; line-height: 23px; padding-top: 50px; }
 
 section {
   overflow: auto;
@@ -114,7 +117,7 @@ p { font-size: 1.2em; line-height: 1.7em; text-align:justify; }
 footer {
     margin-top: 90px;
     padding-top: 5px;
-    border-top: 1px solid $grayMediumLight;
+    border-top: 1px dashed #BCBCBC;
     color: $grayLight;
     a {
 	color: $gray;

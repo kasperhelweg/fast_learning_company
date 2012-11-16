@@ -8,14 +8,14 @@
   <%= link_to [classroom, classroom.pages.where("title = 'Forside'").first] do %> 
   <div class="classrooms thumb L">
     <div class="ribbon-wrapper">
-      <div class="ribbon green"><%= classroom.online_date.strftime("%d %b %y") %></div>
+      <div class="ribbon" style="background-color: <%= classroom.course.color %>"><%= classroom.online_date.strftime("%d %b %y") %></div>
     </div>
     <div class="thumb-inner L">
       <h3 class="alt"><div><%= classroom.course.title %></div></h3>
       <h4 class="alt">Du er tilmeldt dette læringsrum</h4>
     </div>
   </div>
-  
+
   <% end %>
   <% end %>
   <div class="clear"></div>

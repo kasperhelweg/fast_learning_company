@@ -7,7 +7,7 @@ FastLearningCompany::Application.configure do
     :storage => :s3,
     :s3_permissions => :private,
     :s3_credentials => {
-      :bucket => 'ee14e1407f80ba91c4e21deb76e801076bc78a5d903cb70a87097ed4841a8ff0',
+      :bucket => '2ee49c5a83c63507e858d59c850ac4e0fb9d89d4214fcc4744a23fe213412454',
       :access_key_id => 'AKIAJIWIVSBADTJPJB2A',
       :secret_access_key => '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'
     }

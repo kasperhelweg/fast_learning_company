@@ -32,9 +32,9 @@ class CreateUsers < ActiveRecord::Migration
 
       t.timestamps
     end
-
     add_index :users, :id_hash,              :unique => true
     add_index :users, :email,                :unique => true
     add_index :users, :reset_password_token, :unique => true
+    add_attachment :users, :avatar
   end
 end
