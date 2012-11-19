@@ -1,12 +1,19 @@
 class Page < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
-  belongs_to :pageable, :polymorphic => true
   
-  before_create :create_id_hash
+  # Associations
+  belongs_to :pageable, :polymorphic => true
 
+  # Accesible
   attr_accessible :title, :glyph, :desc, :content
   
+  # Callbacks
+  before_create :create_id_hash
+
+  # Validations
+  validates :title, :content, presence: true  
+
   ##############################################################
   # Public interface
   ##############################################################

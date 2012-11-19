@@ -1,10 +1,21 @@
 class Course < ActiveRecord::Base
-  has_many :classrooms
 
-  before_create :create_id_hash
+  # Associations
+  has_many :classrooms, :dependent => :destroy
 
+  # Accesible
   attr_accessible :desc, :short_desc, :title, :color
   
+  # Callbacks
+  before_create :create_id_hash
+
+  # Validations
+  validates   :title, :color, :short_desc, :desc,  presence: true  
+ 
+  ##############################################################
+  # Public interface
+  ##############################################################
+
   def to_param
     id_hash
   end

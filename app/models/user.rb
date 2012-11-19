@@ -4,13 +4,16 @@ class User < ActiveRecord::Base
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
+  # Accesible
   attr_accessible :name, :email, :password, :password_confirmation, :avatar
+  
+  # Callbacks
   before_create   :create_id_hash
   before_save     :downcase_email
   before_save     :fix_name
   before_save     { generate_token( :remember_token ) }
   
-  
+  # Validations
   validates       :name, presence: true, length: { maximum: 50 }  
   validates       :email, presence:   true,
                   format:     { with: VALID_EMAIL_REGEX },
@@ -22,6 +25,7 @@ class User < ActiveRecord::Base
   validates       :password_confirmation, presence: true,
                   :if => lambda{ !password.nil? && !password.empty? }
 
+  # Paperclip
   has_attached_file :avatar, 
                     :styles => { :medium => "140x140>", :thumb => "35x35>" },
                     :default_url => '/assets/avatars/default_:style.png',
@@ -60,6 +64,7 @@ class User < ActiveRecord::Base
     end
     super
   end
+
   ##############################################################
   # Private interface
   ##############################################################
@@ -92,4 +97,5 @@ class User < ActiveRecord::Base
       name.shift.capitalize + " " + construct_name( name )
     end
   end
+
 end

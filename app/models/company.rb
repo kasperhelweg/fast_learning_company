@@ -1,4 +1,6 @@
 class Company < User
+
+  # Associations
   has_many :learners
-  # attr_accessible :title, :body
+
 end

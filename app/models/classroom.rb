@@ -1,17 +1,24 @@
 class Classroom < ActiveRecord::Base
   
+  # Associations
   belongs_to :course
-  has_many   :enrollments
+  has_many   :enrollments, :dependent => :destroy 
   has_many   :learners, :through => :enrollments
 
-  has_many :pages,  :as => :pageable
+  has_many :pages,  :as => :pageable, :dependent => :destroy
   has_many :resources, :as => :attachable
 
-  before_create :create_id_hash
-  before_create :set_dates
-  
+  # Accesible
   attr_accessible :online_date
 
+  # Callbacks
+  before_create :create_id_hash
+  before_create :set_dates
+
+  # Validations
+  validates              :online_date, presence: true  
+  validates_presence_of  :course
+  
   ##############################################################
   # Public interface
   ##############################################################
@@ -19,7 +26,6 @@ class Classroom < ActiveRecord::Base
   def to_param
     id_hash
   end
-
 
   ##############################################################
   # Private interface

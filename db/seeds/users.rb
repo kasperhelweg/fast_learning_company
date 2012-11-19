@@ -1,11 +1,13 @@
+# encoding: utf-8
+
 # Seed users
-user_comp_1 = Company.new( 
+user_comp_1 = Company.create( 
                           name: "Helweg & Pedersen",
                           email: "info@helweg-pedersen.dk", 
                           password: "123456", 
                           password_confirmation: "123456" )
 
-user_comp_2 = Company.new( 
+user_comp_2 = Company.create( 
                           name: "Some Company",
                           email: "info@somecompany.com", 
                           password: "123456", 
