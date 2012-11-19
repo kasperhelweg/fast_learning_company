@@ -1,18 +1,4 @@
 FastLearningCompany::Application.routes.draw do
-  
-  get "enrollments/index"
-
-  get "enrollments/show"
-
-  get "enrollments/new"
-
-  get "enrollments/edit"
-
-  get "enrollments/create"
-
-  get "enrollments/update"
-
-  get "enrollments/destroy"
 
   root                            to: 'static_pages#home'
 
@@ -24,7 +10,10 @@ FastLearningCompany::Application.routes.draw do
   match '/contact',               to: 'static_pages#contact' 
 
   # Users
-  resources :users, :path_names => { :edit => 'account' } 
+  resources :users, :path_names => { :edit => 'account' }
+ 
+    
+ 
   
   # Companies
   #resources :companies
