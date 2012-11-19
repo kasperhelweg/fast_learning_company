@@ -8,7 +8,7 @@ class Enrollment < ActiveRecord::Base
 
   # CHECK THEESE!!
   attr_accessible :classroom_id, :course_id, :learner_id, :status
-  validates :learner_id, :uniquness => { :scope => [:course_id, :classroom_id] }  
+  validates :learner_id, :uniqueness => { :scope => [:course_id, :classroom_id] }  
 
   def to_param
     id_hash

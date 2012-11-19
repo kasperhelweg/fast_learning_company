@@ -33,7 +33,7 @@ user_emp_2 = user_comp_1.learners.build(
                                         password_confirmation: "kiss2211" )
 
 
-user_emp_2.avatar = File.open("/home/kasper/Pictures/kaps.png")
+#user_emp_2.avatar = File.open("/home/kasper/Pictures/kaps.png")
 
 
 user_comp_1.save!
@@ -214,16 +214,16 @@ course_MUS.save!
 
 test_Enrollment_01 = Enrollment.create(
                       learner_id: 3,
-                      classroom_id: 1,
+                      course_id: 1,
                       status: "enrolled" )
 
 test_Enrollment_02 = Enrollment.create(
                       learner_id: 3,
-                      classroom_id: 3,
+                      course_id: 3,
                       status: "enrolled" )
 
 
 test_Enrollment_03 = Enrollment.create(
                       learner_id: 3,
-                      classroom_id: 4,
+                      course_id: 4,
                       status: "enrolled" )
