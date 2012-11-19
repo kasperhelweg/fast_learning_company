@@ -12,14 +12,12 @@ FastLearningCompany::Application.routes.draw do
   # Users
   resources :users, :path_names => { :edit => 'account' }
  
-    
- 
-  
+      
   # Companies
   #resources :companies
 
   # Learners
-  # resources :learners
+  resources :learners
   
   # Courses
   resources :courses  
