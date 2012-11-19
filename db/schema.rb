@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20121106220515) do
   add_index "courses", ["id_hash"], :name => "index_courses_on_id_hash", :unique => true
 
   create_table "enrollments", :force => true do |t|
+    t.string   "id_hash",      :null => false
     t.integer  "classroom_id"
     t.integer  "learner_id",   :null => false
     t.integer  "course_id",    :null => false
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20121106220515) do
     t.datetime "updated_at",   :null => false
   end
 
+  add_index "enrollments", ["id_hash"], :name => "index_enrollments_on_id_hash", :unique => true
   add_index "enrollments", ["learner_id", "course_id", "classroom_id"], :name => "index_enrollments_on_learner_id_and_course_id_and_classroom_id", :unique => true
 
   create_table "pages", :force => true do |t|

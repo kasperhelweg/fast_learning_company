@@ -2,7 +2,7 @@ class CreateEnrollments < ActiveRecord::Migration
   def change
     create_table :enrollments do |t|
       
-
+      t.string  :id_hash,          :null => false
       t.integer :classroom_id
       t.integer :learner_id,       :null => false         
       t.integer :course_id,        :null => false     
@@ -11,5 +11,6 @@ class CreateEnrollments < ActiveRecord::Migration
       t.timestamps
     end
     add_index( :enrollments, [:learner_id, :course_id, :classroom_id], :unique => true )
+    add_index( :enrollments, :id_hash, :unique => true )
   end
 end
