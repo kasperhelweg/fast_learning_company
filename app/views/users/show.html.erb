@@ -19,5 +19,24 @@
   <% end %>
   <% end %>
   <div class="clear"></div>
+
+    
+  <% current_user.enrollments.where("status = 'invited'").each do |enrollment| %>
+     <%= link_to edit_enrollment_path(enrollment) do %> 
+     <div class="classrooms thumb L">
+       <div class="ribbon-wrapper">
+	 <div class="ribbon" style="background-color: <%= enrollment.course.color %>">Invited</div>
+       </div>
+       <div class="thumb-inner L">
+	 <h3 class="alt"><div><%= enrollment.course.title %></div></h3>
+	 <h4 class="alt">Du er tilmeldt dette læringsrum</h4>
+       </div>
+     </div>
+
+  <% end %>
+  <% end %>
+
+  <div class="clear"></div>
+
   <% end %> 
     

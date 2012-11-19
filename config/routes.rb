@@ -38,6 +38,7 @@ FastLearningCompany::Application.routes.draw do
     match ':id(.:format)',  to: 'classrooms#show', as: :page, via: :get
   end
   
+  resources :enrollments
   # Sign in / up and stuff / sessions
   resources :sessions, only: [:new, :create, :destroy]
   

@@ -22,6 +22,4 @@ class Enrollment < ActiveRecord::Base
   def create_id_hash
     self.id_hash = Digest::SHA2.hexdigest( self.learner_id.to_s + self.course_id.to_s )[0..6]
   end
-
-
 end

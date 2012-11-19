@@ -29,8 +29,8 @@ user_emp_1 = user_comp_1.learners.build(
 user_emp_2 = user_comp_1.learners.build(
                                         name: "Kasper Helweg",
                                         email: "kasperhelweg@gmail.com", 
-                                        password: "kiss2211", 
-                                        password_confirmation: "kiss2211" )
+                                        password: "123456", 
+                                        password_confirmation: "123456" )
 
 
 #user_emp_2.avatar = File.open("/home/kasper/Pictures/kaps.png")
@@ -214,16 +214,16 @@ course_MUS.save!
 
 test_Enrollment_01 = Enrollment.create(
                       learner_id: 3,
-                      course_id: 1,
-                      status: "enrolled" )
+                      course_id: 6,
+                      status: "invited" )
 
 test_Enrollment_02 = Enrollment.create(
                       learner_id: 3,
-                      course_id: 3,
-                      status: "enrolled" )
+                      course_id: 7,
+                      status: "invited" )
 
 
 test_Enrollment_03 = Enrollment.create(
                       learner_id: 3,
-                      course_id: 4,
-                      status: "enrolled" )
+                      course_id: 8,
+                      status: "invited" )
