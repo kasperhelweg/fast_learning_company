@@ -79,6 +79,12 @@ class User < ActiveRecord::Base
   def create_id_hash
     self.id_hash = Digest::SHA2.hexdigest( self.email )[0..6]
   end
+
+  
+  def set_status( status )
+    self.status = status
+  end
+
   
   def downcase_email
     self.email = self.email.downcase

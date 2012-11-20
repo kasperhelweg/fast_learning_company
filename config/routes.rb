@@ -9,16 +9,19 @@ FastLearningCompany::Application.routes.draw do
   match '/terms',                 to: 'static_pages#terms' 
   match '/contact',               to: 'static_pages#contact' 
 
-  # Users
-  resources :users, :path_names => { :edit => 'account' }
- 
-      
-  # Companies
+    # Companies
   #resources :companies
 
   # Learners
-  resources :learners
   
+  
+  # Users
+  resources :users, :path_names => { :edit => 'account' } do
+    resources :learners
+  end
+ 
+      
+
   # Courses
   resources :courses  
   resources :classrooms, except: [:show] do

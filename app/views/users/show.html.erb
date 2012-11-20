@@ -21,7 +21,7 @@
     <%= link_to edit_enrollment_path( enrollment ) do %> 
       <div class="classrooms thumb L">
 	<div class="ribbon-wrapper">
-	  <div class="ribbon" style="background-color: #878787">Invited</div>
+	  <div class="ribbon" style="background-color: #878787">Inviteret</div>
 	</div>
 	<div class="thumb-inner L">
 	  <h3 class="alt"><div><%= enrollment.course.title %></div></h3>
@@ -41,7 +41,7 @@
 </div>
 <div class="row">
   <div class="span2">  
-    <%= link_to new_learner_path do %>
+    <%= link_to new_user_learner_path( current_user ) do %>
     <button class="btn btn-success btn-mini pad-button"><i class="icon-white icon-plus-sign"></i></button>
     <% end %>
   </div>

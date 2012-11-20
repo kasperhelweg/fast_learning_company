@@ -9,8 +9,7 @@ class Ability
     if user.role? :company
       # Read self
       can    :manage,   Company,  :id => user.id      # Employees
-      #can    :manage,   Learner, :company_id => user.id
-      cannot :create,   Learner
+      can    :manage,   Learner, :company_id => user.id
       cannot :create,   Company
 
     elsif user.role? :learner
@@ -20,8 +19,7 @@ class Ability
       can    :manage, :all
     else
       can    :create,   Company       
-    end
-    
+    end    
     can      :read,     Course
 
     #end

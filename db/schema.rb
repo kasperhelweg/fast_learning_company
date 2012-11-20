@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20121106220515) do
 
   create_table "users", :force => true do |t|
     t.string   "type",                                   :null => false
+    t.string   "status",                                 :null => false
     t.string   "name",                                   :null => false
     t.string   "id_hash",                                :null => false
     t.string   "email",                  :default => "", :null => false
@@ -105,5 +106,6 @@ ActiveRecord::Schema.define(:version => 20121106220515) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["id_hash"], :name => "index_users_on_id_hash", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["status"], :name => "index_users_on_status"
 
 end

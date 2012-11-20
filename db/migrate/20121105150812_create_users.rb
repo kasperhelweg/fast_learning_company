@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table(:users) do |t|
 
       t.string :type,               :null => false
-
+      t.string :status,             :null => false
       t.string :name,               :null => false
       
       t.string :id_hash,            :null => false
@@ -35,6 +35,7 @@ class CreateUsers < ActiveRecord::Migration
     add_index :users, :id_hash,              :unique => true
     add_index :users, :email,                :unique => true
     add_index :users, :reset_password_token, :unique => true
+    add_index :users, :status
     add_attachment :users, :avatar
   end
 end
