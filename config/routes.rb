@@ -44,7 +44,7 @@ FastLearningCompany::Application.routes.draw do
 
   resources :companies, :path => '', :path_names => { :edit => 'account' } 
   resources :companies, :path => '', :only => [] do 
-    resources :learners, :path => '', :path_names => { :edit => 'account' } 
+    resources :learners, :path => '', :path_names => { :edit => 'account',  :new => 'people/new' } 
   end
 
   
