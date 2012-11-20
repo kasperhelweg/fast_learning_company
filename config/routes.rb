@@ -15,12 +15,6 @@ FastLearningCompany::Application.routes.draw do
   # Learners
   
   
-  # Users
-  resources :users, :path_names => { :edit => 'account' } do
-    resources :learners
-  end
- 
-      
 
   # Courses
   resources :courses  
@@ -43,6 +37,15 @@ FastLearningCompany::Application.routes.draw do
   resources :pages
 
   resources :resources
+
+  
+  # Users
+  #resources :users, :path_names => { :edit => 'account' } 
+
+  resources :companies, :path => '', :path_names => { :edit => 'account' } 
+  resources :companies, :path => '', :only => [] do 
+    resources :learners, :path => '', :path_names => { :edit => 'account' } 
+  end
 
   
 

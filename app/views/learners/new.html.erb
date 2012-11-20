@@ -1,6 +1,6 @@
 <% provide(:title, "Tilføj learner") %>
 
-<%= form_for( @learner, :url => { :action => 'create' }, :html => { :method => "post" } ) do |f| %>
+<%= form_for( [@company, @learner]) do |f| %>
 
 <%= f.label :name %>
 <%= f.text_field :name %>
@@ -12,3 +12,4 @@
 
 
 <% end %>
+

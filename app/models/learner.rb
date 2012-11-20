@@ -6,11 +6,12 @@ class Learner < User
   has_many :classrooms, :through => :enrollments
   
   # Callbacks
-  before_create     { set_status( 'staged' ) }
-  before_validation :generate_password
+  before_validation :on => :create do set_status('staged') end 
+  before_validation :generate_password, :on => :create
   # Validations
   validates_presence_of  :company
 
+  private
   def generate_password
     self.password = self.password_confirmation = "123456" 
   end

@@ -1,12 +1,10 @@
 <% provide(:title, 'Rediger profil') %>
-<%= render 'shared/error_messages' %>    
-<%= form_for(@user, :html => {  :multipart => true, :class => "new_user"}) do |f| %>
-  <%= image_tag @user.avatar.url( :medium ) %>
+
+<%= render :partial => 'shared/error_messages' %>  
+<%= form_for([@learner.company, @learner], :html => {  :multipart => true, :class => "new_user"}) do |f| %>
+  <%= image_tag @learner.avatar.url( :medium ) %>
   <div class="clear"></div>
   <%= f.file_field :avatar %>
   <%= render :partial => 'shared/basic_user_info', :locals => { :f => f } %>  
   <div><%= f.submit "Gem ændringer", class: 'btn' %></div>
 <% end %>
-
-
-

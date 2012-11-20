@@ -10,7 +10,7 @@ class Ability
       # Read self
       can    :manage,   Company,  :id => user.id      # Employees
       can    :manage,   Learner, :company_id => user.id
-      cannot :create,   Company
+      #cannot :create,   Company
 
     elsif user.role? :learner
       can    [:read, :update],     Learner, :id => user.id

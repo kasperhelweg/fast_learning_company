@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121106220515) do
+ActiveRecord::Schema.define(:version => 20121120101639) do
 
   create_table "classrooms", :force => true do |t|
     t.string   "id_hash"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(:version => 20121106220515) do
   end
 
   add_index "classrooms", ["id_hash"], :name => "index_classrooms_on_id_hash", :unique => true
+
+  create_table "company_accounts", :force => true do |t|
+    t.integer  "company_id", :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "courses", :force => true do |t|
     t.string   "id_hash",    :null => false
