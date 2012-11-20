@@ -1,7 +1,7 @@
 <% provide(:title, 'Rediger profil') %>
 
 <%= render :partial => 'shared/error_messages' %>  
-<%= form_for([@learner.company, @learner], :html => {  :multipart => true, :class => "new_user"}) do |f| %>
+<%= form_for( @learner, :html => {  :multipart => true, :class => "new_user"}) do |f| %>
   <%= image_tag @learner.avatar.url( :medium ) %>
   <div class="clear"></div>
   <%= f.file_field :avatar %>

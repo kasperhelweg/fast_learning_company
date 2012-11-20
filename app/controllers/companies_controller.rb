@@ -3,7 +3,7 @@ class CompaniesController < ApplicationController
 
   def show
   end
-
+  
   def edit
   end
 
@@ -18,8 +18,7 @@ class CompaniesController < ApplicationController
     end
   end
   
-  
-  
   def destroy
   end
+
 end

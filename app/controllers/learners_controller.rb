@@ -2,6 +2,9 @@ class LearnersController < ApplicationController
   before_filter :auth
   load_and_authorize_resource :find_by => :id_hash 
   
+  def index
+  end
+
   def show
   end
   
@@ -18,13 +21,16 @@ class LearnersController < ApplicationController
       render 'new'
     end   
   end
-
+  
+  def edit
+  end
+  
   def update
     # Resource already loaded
     if @learner.update_attributes( params[:learner] )
       flash[:success] = "profil opdateret"      
       sign_in @learner
-      redirect_to format_path( current_user )
+      redirect_to current_user 
     else
       render 'edit'
     end
@@ -34,7 +40,7 @@ class LearnersController < ApplicationController
   def auth
     if current_user.role? :company
       @company = Company.find_by_id_hash( params[:company_id] )
-      @learner = Learner.find_by_id_hash( params[:id] )
+      # @learner = Learner.find_by_id_hash( params[:id] )
     end
   end
 end

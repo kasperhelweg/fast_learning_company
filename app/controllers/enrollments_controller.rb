@@ -13,7 +13,7 @@ class EnrollmentsController < ApplicationController
     #render 'edit'
     if @enrollment.update_attributes( params[:enrollment] )
       flash[:success] = "cool"      
-      redirect_to format_path( current_user )
+      redirect_to current_user
     else
       render 'edit'
     end
