@@ -16,7 +16,7 @@ class LearnersController < ApplicationController
     @learner = @company.learners.new( params[:learner] )
     if @learner.save
       flash[:success] = "Learners staged!"
-      redirect_to current_user
+      redirect_to new_order_path
     else
       render 'new'
     end   
