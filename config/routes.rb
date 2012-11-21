@@ -19,6 +19,8 @@ FastLearningCompany::Application.routes.draw do
   resources :products
   resources :orders
 
+  resources  :checkout
+
   # Enrollments
   resources :enrollments
   

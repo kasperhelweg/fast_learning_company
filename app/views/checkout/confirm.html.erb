@@ -1,0 +1,6 @@
+Confirm
+<%= @order %>
+<%= form_for @order, url: wizard_path do |f| %>
+  <div><%= f.submit "Confirm", class: 'btn' %></div>
+
+<% end %>

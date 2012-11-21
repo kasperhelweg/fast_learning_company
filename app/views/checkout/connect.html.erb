@@ -1,0 +1,10 @@
+Connect
+<% @learners.each do |learner| %>
+ <%= learner.name %>
+<% end %>
+
+<%= form_for @order, url: wizard_path do |f| %>
+  <div><%= f.submit "Next", class: 'btn' %></div>
+
+<% end %>
+

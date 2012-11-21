@@ -3,7 +3,7 @@ class CreateOrders < ActiveRecord::Migration
     create_table :orders do |t|
       
       t.integer :account_id
-      i.string  :state
+      t.string  :state
 
       t.timestamps
     end
