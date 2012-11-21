@@ -47,6 +47,11 @@ class User < ActiveRecord::Base
     return role.to_s.camelize == self.type
   end
   
+  def status?( status )
+    return status.to_s == self.status
+  end
+
+  
   def to_param
     id_hash
   end

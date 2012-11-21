@@ -9,7 +9,7 @@ class Ability
     if user.role? :company
       # Read self
       can    :manage,   Company,  :id => user.id      # Employees
-      can    :manage,   Learner,  :company_id => user.id
+      can    :manage,   Learner,  :company_id => user.id if user.status? :confirmed
       #cannot :create,   Company
 
     elsif user.role? :learner

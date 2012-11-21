@@ -3,12 +3,12 @@
   <h3 class="alt">Medarbejdere</h3>
 </div>
 <div class="row">
-  <div class="span1">  
+  <div class="span2">  
     <%= link_to new_company_learner_path( current_user ) do %>
     <button class="btn btn-success btn-mini pad-button"><i class="icon-white icon-plus-sign"></i></button>
     <% end %>
   </div>
-  <div class="span11">
+  <div class="span10">
     <div class="profile">
       <ul>
 	<% current_user.learners.each do |learner| %>
