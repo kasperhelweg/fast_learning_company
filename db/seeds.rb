@@ -9,6 +9,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require File.expand_path('../seeds/users', __FILE__)
 require File.expand_path('../seeds/courses', __FILE__)
+require File.expand_path('../seeds/learning_plans', __FILE__)
+require File.expand_path('../seeds/products', __FILE__)
 require File.expand_path('../seeds/classrooms', __FILE__)
 require File.expand_path('../seeds/invitations', __FILE__)
 require File.expand_path('../seeds/enrollments', __FILE__)

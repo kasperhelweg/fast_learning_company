@@ -9,20 +9,19 @@ FastLearningCompany::Application.routes.draw do
   match '/terms',                 to: 'static_pages#terms' 
   match '/contact',               to: 'static_pages#contact' 
 
-    # Companies
-  #resources :companies
-
-  # Learners
-  
-  
-
   # Courses
   resources :courses  
   resources :classrooms, except: [:show] do
     match ':id(.:format)',  to: 'classrooms#show', as: :page, via: :get
   end
-  
+
+  resources :learning_plans
+  resources :products
+  resources :orders
+
+  # Enrollments
   resources :enrollments
+  
   # Sign in / up and stuff / sessions
   resources :sessions, only: [:new, :create, :destroy]
   
@@ -36,8 +35,8 @@ FastLearningCompany::Application.routes.draw do
   # Admin for pages
   resources :pages
 
+  # Assets
   resources :resources
-
   
   # Users
   #resources :users, :path_names => { :edit => 'account' } 
@@ -46,8 +45,6 @@ FastLearningCompany::Application.routes.draw do
   resources :companies, :path => '', :only => [], :shallow => true do 
     resources :learners, :path => 'people', :path_names => { :edit => 'account',  :new => 'new' } 
   end
-
-  
 
   # Errors routing
   match '*a', :to => 'errors#routing'

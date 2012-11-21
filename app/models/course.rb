@@ -1,7 +1,11 @@
 class Course < ActiveRecord::Base
 
   # Associations
-  has_many :classrooms, :dependent => :destroy
+  has_many    :classrooms, :dependent => :destroy
+  has_and_belongs_to_many :learning_plans
+
+  has_many :course_groupings
+  has_many :learning_plans, :through => :course_groupings
 
   # Accesible
   attr_accessible :desc, :short_desc, :title, :color

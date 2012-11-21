@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120101639) do
+ActiveRecord::Schema.define(:version => 20121121143415) do
+
+  create_table "accounts", :force => true do |t|
+    t.integer  "accountant_id"
+    t.integer  "accountable_id"
+    t.string   "accountable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "classrooms", :force => true do |t|
     t.string   "id_hash"
@@ -26,9 +34,15 @@ ActiveRecord::Schema.define(:version => 20121120101639) do
   add_index "classrooms", ["id_hash"], :name => "index_classrooms_on_id_hash", :unique => true
 
   create_table "company_accounts", :force => true do |t|
-    t.integer  "company_id", :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "course_groupings", :force => true do |t|
+    t.integer  "learning_plan_id"
+    t.integer  "course_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "courses", :force => true do |t|
@@ -56,6 +70,36 @@ ActiveRecord::Schema.define(:version => 20121120101639) do
   add_index "enrollments", ["id_hash"], :name => "index_enrollments_on_id_hash", :unique => true
   add_index "enrollments", ["learner_id", "course_id", "classroom_id"], :name => "index_enrollments_on_learner_id_and_course_id_and_classroom_id", :unique => true
 
+  create_table "learner_accounts", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "learning_plans", :force => true do |t|
+    t.string   "id_hash",    :null => false
+    t.string   "title",      :null => false
+    t.string   "short_desc"
+    t.text     "desc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "learning_plans", ["id_hash"], :name => "index_learning_plans_on_id_hash", :unique => true
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "account_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "pages", :force => true do |t|
     t.string   "id_hash",       :null => false
     t.string   "title",         :null => false
@@ -72,6 +116,15 @@ ActiveRecord::Schema.define(:version => 20121120101639) do
 
   add_index "pages", ["id_hash"], :name => "index_pages_on_id_hash", :unique => true
   add_index "pages", ["slug"], :name => "index_pages_on_slug"
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.integer  "buyable_id"
+    t.string   "buyable_type"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "resources", :force => true do |t|
     t.integer  "attachable_id"
