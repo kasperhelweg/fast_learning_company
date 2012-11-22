@@ -1,6 +1,15 @@
-Confirm
-<%= @order %>
-<%= form_for @order, url: wizard_path do |f| %>
-  <div><%= f.submit "Confirm", class: 'btn' %></div>
+<h4>Confirm</h4><br>
 
+<% @learners.each do |learner| %>
+ <%= image_tag( learner.avatar.url( :thumb ), :class => "profile-image")  %>
+ <h5><%= learner.name %></h5><br>
+ 
+ <div class="clear"></div>
+
+<% end %>
+
+<%= form_for @order, url: wizard_path, :method => :put do |f| %>
+  <%= f.hidden_field :state, :value => 'complete' %>
+  <div><%= f.submit "Confirm", class: 'btn' %></div>
+  <%= link_to "Tilbage", previous_wizard_path %>
 <% end %>

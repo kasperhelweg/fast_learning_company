@@ -1,10 +1,23 @@
-Connect
-<% @learners.each do |learner| %>
- <%= learner.name %>
+<h4>Tilføj Pakker</h4><br>
+<% @formatted_hash.each do |user, line_items| %>
+  <div>
+  <%= image_tag( user.avatar.url( :thumb ), :class => "profile-image")  %>
+  <h5><%= user.name %></h5><br>
+  <% if line_items.length == 0 %>
+    No things
+  <% else %>
+    <% line_items.each do |line_item| %>
+      <%= line_item.product.name %>
+    <% end %>
+  <% end %>
+  </div>
 <% end %>
+ <div class="clear"></div><br>
 
-<%= form_for @order, url: wizard_path do |f| %>
+
+
+<%= form_for @order, url: wizard_path, :method => :put do |f| %>
   <div><%= f.submit "Next", class: 'btn' %></div>
-
 <% end %>
+
 
