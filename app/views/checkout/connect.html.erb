@@ -2,7 +2,8 @@
 <% @formatted_hash.each do |user, line_items| %>
   <div>
   <%= image_tag( user.avatar.url( :thumb ), :class => "profile-image")  %>
-  <h5><%= user.name %></h5><br>
+  <h5><%= user.name %></h5>
+  <h7><%= user.email %></h7><br>
   <% if line_items.length == 0 %>
     No things
   <% else %>
